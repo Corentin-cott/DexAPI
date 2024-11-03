@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pokemonController = require('../controllers/pokemonController.js');
 
-// Route pour récupérer un Pokémon par dexId et form
-router.get('/:id_poke/:id_form', pokemonController.getPokemon);
+router.get('/', pokemonController.getPokemon);
+router.get('/:id_poke', pokemonController.getPokemonByDexId);
+router.get('/:id_poke/:id_form', pokemonController.getPokemonByDexIdAndForm);
 
 module.exports = router;

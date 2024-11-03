@@ -19,6 +19,14 @@ app.get('/', (req, res) => {
 const pokemonRoutes = require('./routes/pokemonRoutes.js');
 app.use('/pokemon', pokemonRoutes);
 
+// Routes de movesetsRoutes.js
+const movesetsRoutes = require('./routes/movesetsRoutes.js');
+app.use('/moveset', movesetsRoutes);
+
+// Routes de pokemon_abilitiesRoutes.js
+const abilitiesRoutes = require('./routes/pokemon_abilitiesRoutes.js');
+app.use('/abilities', abilitiesRoutes);
+
 // Démarrage du serveur
 app.listen(PORT, () => {
     console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
