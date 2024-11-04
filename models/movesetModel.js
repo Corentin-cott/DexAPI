@@ -1,6 +1,17 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path')
-pokemon_db_path = '../databases/pokemon.db'
+const pokemon_db_path = '../databases/pokemon.db'
+
+/*
+TABLE moveseets
+--> id INTEGER PRIMARY KEY
+--> pokemon_id INT NOT NULL
+--> form INT NOT NULL
+--> move VARCHAR(20) NOT NULL
+--> method VARCHAR(20) NOT NULL
+--> level INT
+--> FOREIGN KEY (pokemon_id) REFERENCES Pokemon(id)
+*/
 
 // Fonction pour récupérer TOUS les Pokémon
 const getMovesets = (callback) => {

@@ -14,7 +14,6 @@ const getPokemon = (req, res) => {
 
 const getPokemonByDexId = (req, res) => {
     const { id_poke } = req.params;
-    
     pokemonModel.getPokemonByDexId(id_poke, (err, pokemon) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -28,9 +27,9 @@ const getPokemonByDexId = (req, res) => {
 
 const getPokemonByDexIdAndForm = (req, res) => {
     const { id_poke, id_form } = req.params;
-    
     pokemonModel.getPokemonByDexIdAndForm(id_poke, id_form, (err, pokemon) => {
         // console.log(`Récupération du Pokémon N°${id_poke} en forme N°${id_form}`)
+
         if (err) {
             return res.status(500).json({ error: err.message });
         }

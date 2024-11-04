@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path')
-pokemon_db_path = '../databases/pokemon.db'
+const pokemon_db_path = '../databases/pokemon.db'
 
 /*
 TABLE pokemon
@@ -43,6 +43,7 @@ TABLE pokemon
 // Fonction pour récupérer TOUS les Pokémon
 const getPokemon = (callback) => {
     const db = new sqlite3.Database(path.resolve(__dirname, pokemon_db_path));
+    console.log(`[DEBUG] getPokemon: ${path.resolve(__dirname, pokemon_db_path)}`);
     db.all("SELECT * FROM Pokemon", (err, rows) => {
         callback(err, rows);
     });

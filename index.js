@@ -23,11 +23,25 @@ app.use('/pokemon', pokemonRoutes);
 const movesetsRoutes = require('./routes/movesetsRoutes.js');
 app.use('/moveset', movesetsRoutes);
 
-// Routes de pokemon_abilitiesRoutes.js
+// Routes de abilitiesRoutes.js
 const abilitiesRoutes = require('./routes/abilitiesRoutes.js');
 app.use('/abilities', abilitiesRoutes);
 
+// Routes de movesRoutes.js
+const movesRoutes = require('./routes/movesRoutes.js');
+app.use('/moves', movesRoutes);
+
+// Routes de evolutionsRoutes.js
+const evolutionsRoutes = require('./routes/evolutionsRoutes.js');
+app.use('/evolutions', evolutionsRoutes);
+
+// Routes de breedGroupsRoutes.js
+const breedGroupsRoutes = require('./routes/breedGroupsRoutes.js');
+app.use('/breedGroups', breedGroupsRoutes);
+
 // Démarrage du serveur
 app.listen(PORT, () => {
+    // On clear la console pour plus de lisibilité
+    console.clear();
     console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });

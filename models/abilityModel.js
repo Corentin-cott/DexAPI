@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path')
-pokemon_db_path = '../databases/abilities.db'
+const pokemon_db_path = '../databases/abilities.db'
 
 /*
 TABLE abilities
