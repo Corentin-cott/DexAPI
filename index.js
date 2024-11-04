@@ -24,7 +24,7 @@ const movesetsRoutes = require('./routes/movesetsRoutes.js');
 app.use('/moveset', movesetsRoutes);
 
 // Routes de pokemon_abilitiesRoutes.js
-const abilitiesRoutes = require('./routes/pokemon_abilitiesRoutes.js');
+const abilitiesRoutes = require('./routes/abilitiesRoutes.js');
 app.use('/abilities', abilitiesRoutes);
 
 // Démarrage du serveur

@@ -18,6 +18,9 @@ db.serialize(() => {
             weight DECIMAL(4,1) NOT NULL,
             type1 VARCHAR(20) NOT NULL,
             type2 VARCHAR(20),
+            abilityOne VARCHAR(30) NOT NULL,
+            abilityTwo VARCHAR(30) NOT NULL,
+            abilityHidden VARCHAR(30) NOT NULL,
             baseHp INT NOT NULL,
             baseAtk INT NOT NULL,
             baseDfe INT NOT NULL,
@@ -52,21 +55,6 @@ db.serialize(() => {
             evo_dbSymbol VARCHAR(20) NOT NULL,
             evo_form INT NOT NULL,
             condition TEXT,
-            FOREIGN KEY (pokemon_id) REFERENCES Pokemon(id)
-        );
-    `)
-});
-
-// Je demande la table Abilities
-db.serialize(() => {
-    db.run(`
-        CREATE TABLE Abilities (
-            id INTEGER PRIMARY KEY,
-            pokemon_id INT,
-            form INT NOT NULL,
-            abilityOne VARCHAR(30) NOT NULL,
-            abilityTwo VARCHAR(30) NOT NULL,
-            abilityHidden VARCHAR(30) NOT NULL,
             FOREIGN KEY (pokemon_id) REFERENCES Pokemon(id)
         );
     `)
