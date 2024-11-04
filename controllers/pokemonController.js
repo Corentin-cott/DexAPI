@@ -40,8 +40,21 @@ const getPokemonByDexIdAndForm = (req, res) => {
     });
 };
 
+const getPokemonNationalDex = (req, res) => {
+    pokemonModel.getPokemonNationalDex((err, pokemon) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        if (!pokemon) {
+            return res.status(404).json({ error: "Pokémon non trouvé" });
+        }
+        res.json({ data: pokemon });
+    });
+}
+
 module.exports = {
     getPokemon,
     getPokemonByDexId,
-    getPokemonByDexIdAndForm
+    getPokemonByDexIdAndForm,
+    getPokemonNationalDex
 };

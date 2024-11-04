@@ -43,7 +43,6 @@ TABLE pokemon
 // Fonction pour récupérer TOUS les Pokémon
 const getPokemon = (callback) => {
     const db = new sqlite3.Database(path.resolve(__dirname, pokemon_db_path));
-    console.log(`[DEBUG] getPokemon: ${path.resolve(__dirname, pokemon_db_path)}`);
     db.all("SELECT * FROM Pokemon", (err, rows) => {
         callback(err, rows);
     });
@@ -68,9 +67,18 @@ const getPokemonByDexIdAndForm = (dexId, form, callback) => {
     db.close();
 };
 
+const getPokemonNationalDex = (callback) => {
+    const db = new sqlite3.Database(path.resolve(__dirname, pokemon_db_path));
+    db.all("SELECT id, dexId, nameEN, nameFR, form FROM Pokemon ORDER BY dexId", (err, rows) => {
+        callback(err, rows);
+    });
+    db.close();
+}
+
 // Exporter les fonctions pour les utiliser dans le contrôleur
 module.exports = {
     getPokemon,
     getPokemonByDexIdAndForm,
-    getPokemonByDexId
+    getPokemonByDexId,
+    getPokemonNationalDex
 };

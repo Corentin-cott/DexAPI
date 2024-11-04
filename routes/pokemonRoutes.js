@@ -3,6 +3,7 @@ const router = express.Router();
 const pokemonController = require('../controllers/pokemonController.js');
 
 router.get('/', pokemonController.getPokemon);
+router.get('/national-dex', pokemonController.getPokemonNationalDex);
 router.get('/:id_poke', pokemonController.getPokemonByDexId);
 router.get('/:id_poke/:id_form', pokemonController.getPokemonByDexIdAndForm);
 
