@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Fonctionnement](#fonctionnement)
+- [Installation](#installation)
 - [Contributions](#contributions)
 
 ## Introduction
@@ -18,6 +19,10 @@ DexAPI est une API REST, conçu avec [Node.js](https://nodejs.org/en) et [Expres
 Elle est faite pour lire et partager les données des bases de données SQLite faites par les scripts de [PSDK_JsonToSQL](https://github.com/Corentin-cott/PSDK_JsonToSQL).
 
 Pour chaque table de chaque base, l'API possède une liste de route, vous pouvez les voir [ici](https://github.com/Corentin-cott/DexAPI/tree/main/routes)
+
+## Installation
+
+Cloner le depot ou télécharger le code source, ajouter une base de données SQLite, et c'est parti !
 
 ## Contributions
 
